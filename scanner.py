@@ -13,7 +13,7 @@ class Camera:
         self.ip = self._get_bytes(offset, length).decode("ascii").rstrip().lstrip()
 
         # mac
-        offset, length = int('54', 16), 5
+        offset, length = int('54', 16), 6
         b_mac = self._get_bytes(offset, length)
         self.mac = ':'.join([byte.hex() for byte in struct.unpack(str(len(b_mac)) + 'c', b_mac)]).upper()
 
